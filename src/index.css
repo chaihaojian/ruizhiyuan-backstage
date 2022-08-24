@@ -7,6 +7,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+    position: absolute;
+    width: 100%;
+    /* min-width: 1440px; */
+    height: 100%;
+    overflow: visible;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

@@ -9,8 +9,9 @@ import {
   import { Routes, Route } from 'react-router-dom'
   import { Link } from 'react-router-dom';
   import './index.css';
-  import Article from '../../components/article'
+  import ArticleList from '../../components/articleList'
   import Video from '../../components/video'
+import AddArticle from '../../components/addArticle';
 
   const { Header, Sider, Content } = Layout;
   const Front = () => {
@@ -27,7 +28,7 @@ import {
               {
                 key: '1',
                 icon: <UserOutlined />,
-                label: <Link to="/article">文章</Link>
+                label: <Link to="/article/list">文章</Link>
               },
               {
                 key: '2',
@@ -59,7 +60,8 @@ import {
           >
             <div>
                <Routes>
-                    <Route path="/article/*" element={<Article/>} />
+                    <Route path="/article/list/*" element={<ArticleList/>} />
+                    <Route path="/article/add/*" element={<AddArticle/>} />
                     <Route path="/video/*" element={<Video/>} />
                </Routes>
             </div>

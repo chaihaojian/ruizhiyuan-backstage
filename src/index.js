@@ -5,6 +5,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// axios.interceptors.request.use(
+//   config => {
+//     config.headers = {
+//       Authorization: 'Bearer ' 
+//     }
+//   }
+// );
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   //<React.StrictMode>

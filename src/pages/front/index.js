@@ -12,6 +12,7 @@ import {
   import ArticleList from '../../components/articleList'
   import Video from '../../components/video'
 import AddArticle from '../../components/addArticle';
+import Material from '../../components/material';
 
   const { Header, Sider, Content } = Layout;
   const Front = () => {
@@ -34,6 +35,16 @@ import AddArticle from '../../components/addArticle';
                 key: '2',
                 icon: <VideoCameraOutlined />,
                 label: <Link to="/video">视频</Link>
+              },
+              {
+                key: '3',
+                icon: <VideoCameraOutlined />,
+                label: <Link to="/material">资料</Link>
+              },
+              {
+                key: '4',
+                icon: <VideoCameraOutlined />,
+                label: <Link to="/reservation">预约信息</Link>
               },
             ]}
           />
@@ -63,6 +74,8 @@ import AddArticle from '../../components/addArticle';
                     <Route path="/article/list/*" element={<ArticleList/>} />
                     <Route path="/article/add/*" element={<AddArticle/>} />
                     <Route path="/video/*" element={<Video/>} />
+                    <Route path="/material/*" element={<Material/>} />
+                    <Route path="/reservation/*" element={<Video/>} />
                </Routes>
             </div>
           </Content>

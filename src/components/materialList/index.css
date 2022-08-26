@@ -1,0 +1,15 @@
+.itemMaterialName{
+    width: 25%;
+}
+.itemMaterialPart{
+    width: 15%;
+}
+.itemMaterialSize{
+    width: 15%;
+}
+.itemMaterialTime{
+    width: 25%;
+}
+.MaterialBtn{
+    margin-right: 20px;
+}

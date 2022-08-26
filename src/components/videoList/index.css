@@ -23,21 +23,21 @@
     border-radius: 1px 0 0 1px;
     align-items: center;
 }
-.itemTitle{
+.itemVideoTitle{
     width: 15%;
 }
-.itemPart{
+.itemVideoPart{
     width: 10%;
 }
-.itemLink{
+.itemVideoLink{
     width: 30%;
 }
-.itemTime{
+.itemVideoTime{
     width: 15%;
 }
-.itemSwitch{
+.itemVideoSwitch{
     width: 10%;
 }
-.btn{
+.Videobtn{
     margin-right: 20px;
 }

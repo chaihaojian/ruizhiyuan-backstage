@@ -18,7 +18,6 @@ class VideoList extends Component {
         axios.get(url)
         .then(
             response => {
-                console.log(response.data)
                 if (response.data.code === 1004) {
                     console.log('need login')
                 }
@@ -66,16 +65,16 @@ class VideoList extends Component {
                             this.state.videoList !== null && this.state.videoList.map(vObj => {
                                 return(
                                     <div key={vObj.id} className='item'>
-                                        <div className='itemTitle'>{vObj.title}</div>
-                                        <div className='itemPart'>{vObj.partition}</div>
-                                        <div className='itemLink'><a>{vObj.link}</a></div>
-                                        <div className='itemTime'>{vObj.update_time}</div>
-                                        <div className='itemSwitch'>
+                                        <div className='itemVideoTitle'>{vObj.title}</div>
+                                        <div className='itemVideoPart'>{vObj.partition}</div>
+                                        <div className='itemVideoLink'><a>{vObj.link}</a></div>
+                                        <div className='itemVideoTime'>{vObj.update_time}</div>
+                                        <div className='itemVideoSwitch'>
                                             <Switch checkedChildren="展示" unCheckedChildren="不展示" defaultChecked={false} />
                                         </div>
                                         <div className='itemOperate'>
-                                            <Button type="primary" className='btn'>更新</Button>
-                                            <Button type="primary" className='btn'>删除</Button>
+                                            <Button type="primary" className='Videobtn'>更新</Button>
+                                            <Button type="primary" className='Videobtn'>删除</Button>
                                         </div>
                                     </div>
                                 )

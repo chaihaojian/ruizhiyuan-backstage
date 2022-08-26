@@ -24,7 +24,6 @@ const ArticleList = () => {
           console.log('need login')
           navigate('/login')
         }
-        console.log(response.data.data)
         setArticleList(response.data.data)
       },
       error => {

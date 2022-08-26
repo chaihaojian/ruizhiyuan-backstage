@@ -15,12 +15,12 @@ const Login = () => {
     })
       .then(
         response => {
-          console.log('success', response.data)
           storage.token = response.data.data
+          localStorage.setItem('ACCESS_TOKEN', 'Bearer ' + storage.token)
           axios.interceptors.request.use(function (config) {
             config.withCredentials = true
             config.headers = {
-              'Authorization': 'Bearer' + ' ' + storage.token,
+              'Authorization': 'Bearer ' + storage.token,
             }
             return config;
           }, function (error) {

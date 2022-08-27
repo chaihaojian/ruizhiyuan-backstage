@@ -5,7 +5,7 @@ import { Navigate } from 'react-router-dom';
 import { Switch, Button } from 'antd';
 import './index.css'
 
-class VideoList extends Component {
+class Reserve extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -13,8 +13,8 @@ class VideoList extends Component {
             videoList: [],
         }
     }
-    getVideoList = () => {
-        var url = 'http://localhost:8080/admin/video/all'
+    getReserveList = () => {
+        var url = 'http://localhost:8080/admin/reserve/all'
         axios.get(url)
             .then(
                 response => {
@@ -23,7 +23,7 @@ class VideoList extends Component {
                     }
                     this.setState({
                         resCode: response.data.code,
-                        videoList: response.data.data
+                        reserveList: response.data.data
                     })
                 },
                 error => {
@@ -32,24 +32,24 @@ class VideoList extends Component {
             )
     }
 
-    deleteVideo = (id) => {
-        axios.delete('http://localhost:8080/admin/video/delete', {
+    deleteReserve = (id) => {
+        axios.delete('http://localhost:8080/admin/reserve/delete', {
             params: {
                 'id': id
             }
         }).then(response => {
-            this.getVideoList()
+            this.getReserveList()
         })
     }
 
-    componentDidMount() {
-        this.getVideoList()
-        this.token = PubSub.subscribe('addVideo', this.getVideoList)
-    }
+    // componentDidMount() {
+    //     this.getReserveList()
+    //     this.token = PubSub.subscribe('addVideo', this.getVideoList)
+    // }
 
-    componentWillUnmount() {
-        PubSub.unsubscribe(this.token)
-    }
+    // componentWillUnmount() {
+    //     PubSub.unsubscribe(this.token)
+    // }
 
     render() {
         return (
@@ -63,12 +63,13 @@ class VideoList extends Component {
                     this.state.resCode === 1000 && (
                         <div>
                             <div className='header'>
-                                <span style={{ width: '15%' }}>标题</span>
-                                <span style={{ width: '10%' }}>分区</span>
-                                <span style={{ width: '30%' }}>地址</span>
-                                <span style={{ width: '15%' }}>更新时间</span>
-                                <span style={{ width: '10%' }}>是否展示</span>
-                                <span style={{ width: '20%' }}>操作</span>
+                                <span style={{ width: '7%' }}>姓名</span>
+                                <span style={{ width: '10%' }}>所在国家</span>
+                                <span style={{ width: '7%' }}>年龄</span>
+                                <span style={{ width: '18%' }}>微信号/手机号</span>
+                                <span style={{ width: '15%' }}>邮箱</span>
+                                <span style={{ width: '25%' }}>咨询的问题</span>
+                                <span style={{ width: '17%' }}>空闲时间</span>
                             </div>
                             <div className='list'>
                                 {
@@ -84,7 +85,7 @@ class VideoList extends Component {
                                                 </div>
                                                 <div className='itemOperate'>
                                                     <Button type="primary" className='Videobtn'>更新</Button>
-                                                    <Button type="primary" className='Videobtn' onClick={(id)=>{this.deleteVideo(vObj.id)}}>删除</Button>
+                                                    <Button type="primary" className='Videobtn' onClick={(id) => { this.deleteVideo(vObj.id) }}>删除</Button>
                                                 </div>
                                             </div>
                                         )
@@ -100,4 +101,4 @@ class VideoList extends Component {
 }
 
 
-export default VideoList;
+export default Reserve;

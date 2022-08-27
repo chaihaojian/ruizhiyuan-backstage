@@ -13,6 +13,8 @@ import {
   import Video from '../../components/video'
 import AddArticle from '../../components/addArticle';
 import Material from '../../components/material';
+import Reserve from '../../components/reserve';
+import UpdateArticle from '../../components/updateArticle';
 
   const { Header, Sider, Content } = Layout;
   const Front = () => {
@@ -44,7 +46,7 @@ import Material from '../../components/material';
               {
                 key: '4',
                 icon: <VideoCameraOutlined />,
-                label: <Link to="/reservation">预约信息</Link>
+                label: <Link to="/reserve">预约信息</Link>
               },
             ]}
           />
@@ -73,9 +75,10 @@ import Material from '../../components/material';
                <Routes>
                     <Route path="/article/list/*" element={<ArticleList/>} />
                     <Route path="/article/add/*" element={<AddArticle/>} />
+                    <Route path="/article/update" element={<UpdateArticle/>} />
                     <Route path="/video/*" element={<Video/>} />
                     <Route path="/material/*" element={<Material/>} />
-                    <Route path="/reservation/*" element={<Video/>} />
+                    <Route path="/reserve/*" element={<Reserve/>} />
                </Routes>
             </div>
           </Content>
